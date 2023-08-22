@@ -1,0 +1,52 @@
+<%= form_with(model: property) do |form| %>
+  <% if property.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(property.errors.count, "error") %> prohibited this property from being saved:</h2>
+
+      <ul>
+        <% property.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div>
+    <%= form.label :typeProperty, style: "display: block" %>
+    <%= form.text_field :typeProperty %>
+  </div>
+
+  <div>
+    <%= form.label :category_id, style: "display: block" %>
+    <%= form.text_field :category_id %>
+  </div>
+
+  <div>
+    <%= form.label :squareMeters, style: "display: block" %>
+    <%= form.number_field :squareMeters %>
+  </div>
+
+  <div>
+    <%= form.label :direction, style: "display: block" %>
+    <%= form.text_area :direction %>
+  </div>
+
+  <div>
+    <%= form.label :contact, style: "display: block" %>
+    <%= form.number_field :contact %>
+  </div>
+
+  <div>
+    <%= form.label :available, style: "display: block" %>
+    <%= form.check_box :available %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
