@@ -15,7 +15,7 @@
 
   <div>
     <%= form.label :typeProperty, style: "display: block" %>
-    <%= form.text_field :typeProperty %>
+    <%= form.text_field :typeProperty, autofocus: true, required: true %>
   </div>
 
   <div>
@@ -25,17 +25,17 @@
 
   <div>
     <%= form.label :squareMeters, style: "display: block" %>
-    <%= form.number_field :squareMeters %>
+    <%= form.number_field :squareMeters, required: true %>
   </div>
 
   <div>
     <%= form.label :direction, style: "display: block" %>
-    <%= form.text_area :direction %>
+    <%= form.text_area :direction, required: true, minlength: 10 %>
   </div>
 
   <div>
     <%= form.label :contact, style: "display: block" %>
-    <%= form.number_field :contact %>
+    <%= form.text_field :contact, required: true %>
   </div>
 
   <div>
