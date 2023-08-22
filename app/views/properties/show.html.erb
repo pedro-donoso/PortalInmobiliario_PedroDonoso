@@ -1,10 +1,11 @@
 <p style="color: green"><%= notice %></p>
-
 <%= render @property %>
-
 <div>
-  <%= link_to "Edit this property", edit_property_path(@property) %> |
-  <%= link_to "Back to properties", properties_path %>
-
+  <% if user_signed_in? %>
+    <% if current_user.id == @property.user_id %>
+      <%= link_to "Edit this property", edit_property_path(@property) %> |
+      <%= link_to "Back to properties", properties_path %>
+    <% end %>
+  <% end %>
   <%= button_to "Destroy this property", @property, method: :delete %>
 </div>

@@ -14,6 +14,14 @@
 #  updated_at   :datetime         not null
 #
 class Property < ApplicationRecord
+  #Defino relacion
   belongs_to :user
   belongs_to :category
+
+  # Creo validacion
+  validates :typeProperty, presence: true
+  validates :category, presence: true
+  validates :squareMeters, presence: true
+  validates :direction, presence: true
+  validates :contact, presence: true
 end
