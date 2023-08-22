@@ -1,7 +1,17 @@
 Rails.application.routes.draw do
-  devise_for :users
+  resources :products
+  root 'pages#home'
+
+  #Datos de la gema Devise
+  devise_for :users,  controllers: { registrations: 'registrations' },
+                      path: '',
+                      path_names: { sign_in: 'login',
+                                    sign_out: 'logout',
+                                    sign_up: 'registrate' }
+
+  #Vistas estaticas
   get '/home',    to: 'pages#home'
-  get '/terms',   to: 'pages#terms'
   get '/privacy', to: 'pages#privacy'
-  root "pages#home"
+  get '/terms',   to: 'pages#terms'
+  resources :contacts, only: %i[new create]
 end
