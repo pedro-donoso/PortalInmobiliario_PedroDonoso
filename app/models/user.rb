@@ -20,6 +20,14 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+         #Enum de Roles
+         enum role: {
+          propietario: 'propietario',
+          corredor: 'corredor',
+          inmobiliaria: 'inmobiliaria',
+          admin: 'administrador'
+         }, _default: 'propietario'
+
  # Creo método para mostrar usuario por defecto
   def full_name
     name.blank? ? email : name
