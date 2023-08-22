@@ -20,6 +20,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+         validates :role, inclusion: { in %w[propietario corredor inmobiliaria administrador] }
+
          #Enum de Roles
          enum role: {
           propietario: 'propietario',
