@@ -4,8 +4,15 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.2.2"
 
 # Gemas agregadas por mi
+
 # Flexible authentication solution for Rails with Warde.
 gem 'devise'
+
+# About Annotate Rails classes with schema and routes info
+# Ejecutar "annotate --models" desde consola
+gem 'annotate'
+
+# Gemas agregadas por mi
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.7"
