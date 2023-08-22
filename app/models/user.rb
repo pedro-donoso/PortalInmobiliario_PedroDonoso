@@ -20,15 +20,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-         validates :role, inclusion: { in %w[propietario corredor inmobiliaria administrador] }
-
-         #Enum de Roles
-         enum role: {
-          propietario: 'propietario',
-          corredor: 'corredor',
-          inmobiliaria: 'inmobiliaria',
-          admin: 'administrador'
-         }, _default: 'propietario'
+        #Agrego Validaciones
+  validates :role, inclusion: { in: %w[normal administrador] }
+  # Enum de roles
+  enum role: {
+    normal: 'normal',
+    admin: 'administrador'
+  }, _default: 'normal'
 
  # Creo método para mostrar usuario por defecto
   def full_name
