@@ -33,4 +33,6 @@ class User < ApplicationRecord
     name.blank? ? email : name
   end
 
+  #Relacion
+  has_many :properties, dependent: :destroy
 end
