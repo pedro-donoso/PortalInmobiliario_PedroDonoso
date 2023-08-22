@@ -69,4 +69,9 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+
+# Gemas agregadas por mi
+# Flexible authentication solution for Rails with Warde.
+gem 'devise'
+
 end
