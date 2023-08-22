@@ -18,6 +18,11 @@ class PropertiesController < ApplicationController
 
   # GET /properties/1/edit
   def edit
+      if current_user.id == @property.user_id
+        @property = Property.find(params[:id])
+      else
+        redirect_to root_path, notice: 'Disculpa No puedes editar una Propiedad que no creaste'
+      end
   end
 
   # POST /properties or /properties.json
